@@ -71,6 +71,12 @@ class DashboardFragment : Fragment() {
                 else -> {}
             }
         }
+
+        easyPayViewModel.currentLogin.observe(viewLifecycleOwner) { login ->
+            if (login == null) {
+                paymentAdapter.updatePayments(emptyList())
+            }
+        }
         return root
     }
 

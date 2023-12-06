@@ -22,20 +22,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Payment Title: " />
+            android:text="Payment Title: "
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/paymentCreated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Payment Created: " />
+            android:text="Payment Created: "
+            android:textAlignment="center" />
     </LinearLayout>
 
-        <TextView
-            android:id="@+id/paymentAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Payment Amount: " />
+    <TextView
+        android:id="@+id/paymentAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Payment Amount: "
+        android:textAlignment="viewEnd" />
 </LinearLayout>
