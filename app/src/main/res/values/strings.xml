@@ -8,4 +8,9 @@
     <string name="password_hint">Password</string>
     <string name="login_text">Login</string>
     <string name="logout_text">Logout</string>
+    <string name="payment_id">Payment ID:</string>
+    <string name="payment_title">Payment Title:</string>
+    <string name="payment_created">Payment Created:</string>
+    <string name="payment_amount">Payment Amount:</string>
+    <string name="no_data">No data</string>
 </resources>

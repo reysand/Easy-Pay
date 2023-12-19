@@ -45,6 +45,8 @@ class DashboardFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = paymentAdapter
 
+        val statusTextView = binding.status
+
         easyPayViewModel.currentLogin.value?.values?.let { dashboardViewModel.fetchPayments(easyPayViewModel, it.first()) }
 
         dashboardViewModel.paymentListResult.observe(viewLifecycleOwner) { result ->
@@ -58,6 +60,7 @@ class DashboardFragment : Fragment() {
                     // Update recyclerview
                     Log.d("DashboardFragment", "${result.paymentList}")
                     result.paymentList?.let { paymentAdapter.updatePayments(it) }
+                    statusTextView.visibility = View.INVISIBLE
                 }
 
                 is PaymentListResult.Error -> {
@@ -75,6 +78,7 @@ class DashboardFragment : Fragment() {
         easyPayViewModel.currentLogin.observe(viewLifecycleOwner) { login ->
             if (login == null) {
                 paymentAdapter.updatePayments(emptyList())
+                statusTextView.visibility = View.VISIBLE
             }
         }
         return root
